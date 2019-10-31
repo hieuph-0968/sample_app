@@ -51,3 +51,14 @@ en:
     new:
       sign_up: "Sign Up"
       content_sign_up: "This will be a signup page for new users."
+      confirm: "Confirmation"
+      create: "Create my account"
+    create:
+      create_succes: "Welcome to the Sample App!"
+    show:
+      id_un_exist: "ID is not exist"
+
+  shared:
+    error_messages:
+      one: "The form contains %{count} error"
+      other: "The form contains %{count} errors"
