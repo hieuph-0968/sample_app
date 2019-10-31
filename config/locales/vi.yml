@@ -10,7 +10,7 @@ vi:
 
     help:
       help: "Trợ giúp"
-      text: "Lây sự giúp đỡ về Ruby on Rails Tutorial ở %{link_home} mục Rails Tutorial help"
+      text: "Lấy sự giúp đỡ về Ruby on Rails Tutorial ở %{link_home} mục Rails Tutorial help"
       rubyonrails_href: "Ruby on Rails Tutorial"
       text2: "Để lấy sự giúp đỡ cho ứng dụng mẫu này, xem "
       text3: "%{link_home2}"
@@ -34,8 +34,7 @@ vi:
       sampleapp: "ứng dụng mẫu"
       rubyonrails: "| Ứng dụng mẫu hướng dẫn Ruby on Rails"
     footer:
-      home: "Trang chủ"
-      ruby_html: <a href = "https://www.railstutorial.org/">Hướng dẫn Ruby on Rails</a> bởi <a href ="http://www.michaelhartl.com/" >Michael Hartl</a>
+      ruby_html: <a href="https://www.railstutorial.org/">Hướng dẫn Ruby on Rails</a> bởi <a href="http://www.michaelhartl.com/">Michael Hartl</a>
       new: "Tin tức"
       about: "Chi tiết"
       contact: "Liên hệ"
