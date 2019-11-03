@@ -1,4 +1,15 @@
 en:
+  helpers:
+    label:
+      user:
+        name: "Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+      session:
+        email: "Email"
+        password: "Password"
+
   static_pages:
     home:
       home: "Home"
@@ -33,8 +44,7 @@ en:
 
   layouts:
     application:
-      sampleapp: "sample app"
-      rubyonrails: "| Ruby on Rails Tutorial Sample App"
+      title: "Ruby on Rails Tutorial Sample App"
     footer:
       ruby_html: <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a> by <a href ="http://www.michaelhartl.com/" >Michael Hartl</a>
       new: "News"
@@ -44,6 +54,11 @@ en:
       home: "Home"
       help: "Help"
       login: "Log in"
+      link_dropdown_html: "Account <b class='caret'></b>"
+      user: "Users"
+      profile: "Profile"
+      setting: "Settings"
+      logout: "Log out"
       en: "English"
       vi: "Vietnamese"
 
@@ -57,8 +72,15 @@ en:
       create_succes: "Welcome to the Sample App!"
     show:
       id_un_exist: "ID is not exist"
-
   shared:
     error_messages:
       one: "The form contains %{count} error"
       other: "The form contains %{count} errors"
+  sessions:
+    create:
+      fail: "Invalid email/password combination"
+    new:
+      login: "Log in"
+      sign_up: "Sign up now!"
+      new_user: "New user?"
+
