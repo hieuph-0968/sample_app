@@ -31,8 +31,7 @@ vi:
 
   layouts:
     application:
-      sampleapp: "ứng dụng mẫu"
-      rubyonrails: "| Ứng dụng mẫu hướng dẫn Ruby on Rails"
+      title: "Ứng dụng mẫu hướng dẫn Ruby on Rails"
     footer:
       ruby_html: <a href="https://www.railstutorial.org/">Hướng dẫn Ruby on Rails</a> bởi <a href="http://www.michaelhartl.com/">Michael Hartl</a>
       new: "Tin tức"
@@ -40,8 +39,13 @@ vi:
       contact: "Liên hệ"
     header:
       home: "Trang chủ"
-      help: "Trợ giúp"
+      help: "Giúp đỡ"
       login: "Đăng nhập"
+      link_dropdown_html: "Tài khoản <b class='caret'></b>"
+      user: "Người dùng"
+      profile: "Thông tin"
+      setting: "Thiết lập"
+      logout: "Đăng xuất"
       en: "Tiếng Anh"
       vi: "Tiếng Việt"
 
@@ -59,5 +63,9 @@ vi:
     error_messages:
       one: "Biểu mẫu có chứa %{count} lỗi"
       other: "Biểu mẫu có chứa %{count} lỗi"
+  sessions:
+    create:
+      fail: "email/password sai"
+
 
 
