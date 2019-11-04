@@ -1,4 +1,14 @@
 en:
+  helpers:
+    label:
+      user:
+        name: "Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+      session:
+        email: "Email"
+        password: "Password"
   static_pages:
     home:
       home: "Home"
@@ -69,3 +79,9 @@ en:
   sessions:
     create:
       fail: "Invalid email/password combination"
+      found: "User not found!"
+    new:
+      login: "Log in"
+      sign_up: "Sign up now!"
+      new_user: "New user?"
+      span: "Remember me on this computer"

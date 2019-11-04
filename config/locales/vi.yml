@@ -1,4 +1,14 @@
 vi:
+  helpers:
+    label:
+      user:
+        name: "Tên"
+        email: "Email"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+      session:
+        email: "Email"
+        password: "Mật khẩu"
   static_pages:
     home:
       home: "Trang chủ"
@@ -66,6 +76,12 @@ vi:
   sessions:
     create:
       fail: "email/password sai"
+      found: "Không tìm thấy user"
+    new:
+      login: "Đăng nhập"
+      sign_up: "Đăng kí ngay!"
+      new_user: "Tạo mới người dùng?"
+      span: "Ghi nhớ tôi trên máy tính"
 
 
 

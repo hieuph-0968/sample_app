@@ -2,20 +2,20 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   def setup
-    @user = User.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar")
+    @user = User.new(name: "Example name", email: "Example_email@email.com", password: "foobar", password_confirmation: "foobar")
   end
 
   test "should be valid" do
     assert @user.valid?
   end
 
-  test "name should be present" do
-    @user.name = "     "
+  test "email should be present" do
+    @user.email = "     "
     assert_not @user.valid?
   end
 
-  test "email should be present" do
-    @user.email = "     "
+  test "name should be present" do
+    @user.name = "   "
     assert_not @user.valid?
   end
 
@@ -29,12 +29,11 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-  test "email validation should accept valid addresses" do
-    valid_addresses = %w[user@example.com USER@foo.COM A_US-ER@foo.bar.org
-                         first.last@foo.jp alice+bob@baz.cn]
-    valid_addresses.each do |valid_address|
-      @user.email = valid_address
-      assert @user.valid?, "#{valid_address.inspect} should be valid"
+  test "email validation should accept valid address" do
+    valid_address = %w[user@example.com USER@foo.COM A_US-ER@foo.bar.org rst.last@foo.jp alice_bob@baz.cn]
+    valid_address.each do |v_add|
+        @user.email =  v_add
+        assert @user.valid?, "#{v_add.inspect} should be valid"
     end
   end
 
@@ -61,13 +60,17 @@ class UserTest < ActiveSupport::TestCase
     assert_equal mixed_case_email.downcase, @user.reload.email
   end
 
-  test "password should be present (nonblank)" do
+  test "password should be present" do
     @user.password = @user.password_confirmation = " " * 6
     assert_not @user.valid?
   end
 
-  test "password should have a minimum length" do
+  test "password should have a minimum lengh" do
     @user.password = @user.password_confirmation = "a" * 5
     assert_not @user.valid?
+  end
+
+  test "authenticated? should return false for a user with nil digest" do
+    assert_not @user.authenticated?("")
   end
 end
