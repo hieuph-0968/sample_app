@@ -78,9 +78,10 @@ en:
       other: "The form contains %{count} errors"
   sessions:
     create:
-      fail: "Invalid email/password combination"
+      faild: "Invalid email/password combination"
     new:
       login: "Log in"
       sign_up: "Sign up now!"
       new_user: "New user?"
+      remember: "Remember me on this computer"
 

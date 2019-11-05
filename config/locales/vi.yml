@@ -75,14 +75,12 @@ vi:
       other: "Biểu mẫu có chứa %{count} lỗi"
   sessions:
     create:
-      fail: "email/password sai"
+      faild: "email/password sai"
     new:
       login: "Đăng nhập"
       sign_up: "Đăng kí ngay!"
       new_user: "Tạo mới người dùng?"
-    form_for:
-      email: "Email"
-      password: "Mật khẩu"
+      remember: "Ghi nhớ mật khẩu"
 
 
 
