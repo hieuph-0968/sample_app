@@ -1,14 +1,16 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
-  before_action :admin_user, only: :destroy
-  before_action :find_user, only: [:edit, :update, :destroy, :show]
+  before_action :check_admin, only: :destroy
+  before_action :load_user, only: [:edit, :update, :destroy, :show]
 
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.paginate page: params[:page]
   end
 
-  def show; end
+  def show
+    @microposts = @user.microposts.paginate page: params[:page]
+  end
 
   def new
     @user = User.new
@@ -38,12 +40,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    if @user.destroy
-      flash[:success] = t ".deleted"
-      redirect_to users_path
-    else
-      render :new
-    end
+    @user.destroy
+    flash[:success] = t ".deleted"
+    redirect_to users_path
   end
 
   private
@@ -61,26 +60,26 @@ class UsersController < ApplicationController
     redirect_to login_path
   end
 
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+
+    flash[:danger] = t ".id_un_exist"
+    redirect_to root_path
+  end
+
   def correct_user
-    find_user
+    load_user
     return if current_user? @user
 
     flash[:danger] = t "users.not_allow"
     redirect_to root_path
   end
 
-  def admin_user
+  def check_admin
     return if current_user.admin?
 
     flash[:danger] = t "users.not_admin"
-    redirect_to root_path
-  end
-
-  def find_user
-    @user = User.find_by id: params[:id]
-    return if @user
-
-    flash[:danger] = t ".id_un_exist"
     redirect_to root_path
   end
 end

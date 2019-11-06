@@ -12,12 +12,13 @@ en:
 
   static_pages:
     home:
-      home: "Home"
+      title_home: "Home"
       welcome: "Welcome to the Sample App"
       homepage: "This is the home page for the"
       application: "sample application."
       rubyonrails_href: "Ruby on Rails Tutorial"
       signup: "Sign up now!"
+      micropost_feed: "Micropost Feed"
 
     help:
       help: "Help"
@@ -77,6 +78,7 @@ en:
       success: "Please check your email to activate your account."
     show:
       id_un_exist: "ID is not exist"
+      micropost: "Microposts "
     update:
       updated: "Profile updated"
     destroy:
@@ -94,8 +96,13 @@ en:
 
   shared:
     error_messages:
-      one: "The form contains %{count} error"
-      other: "The form contains %{count} errors"
+      count:
+        one: "The form contains %{count} error"
+        other: "The form contains %{count} errors"
+    micropost_form:
+      placeholder: "Compose new micropost..."
+      post: "Post"
+      micropost_form_notify: "Maximum file size is 5MB. Please choose a smaller file."
   sessions:
     load_user: "User no exist!"
     create:
@@ -106,14 +113,48 @@ en:
       sign_up: "Sign up now!"
       new_user: "New user?"
       remember: "Remember me on this computer"
+      forget: "(forgot password)"
   user_mailer:
     h1: "Sample App"
     p1: "Hi "
     p2: "Welcome to the Sample App! Click on the link below to activate your account:"
     link: "Activate"
-    Account_mail: "Account activation"
+    h1_pass: "Password reset"
+    p_pass: "To reset your password click the link below:"
+    reset_link: "Reset password"
+    p_link: "This link will expire in two hours."
+    p_request: If you did not request your password to be reset, please ignore this email and your password will stay as it is.
+    account_mail: "Account activation"
+    reset_password: "Reset password"
   account_activations:
     edit:
       danger: "Invalid activation link"
       success: "Account activated!"
+  password_resets:
+    expired_pass: "Password reset has expired."
+    email_un_exist: "Email not exist"
+    user_un_active: "User not activated"
+    edit:
+      title: "Reset password"
+      update_pass: "Update password"
+    new:
+      submit: "Submit"
+    create:
+      confirm_pass: "Email sent with password reset instructions"
+      email_not_found: "Email address not found"
+    update:
+      empty: "can't be empty"
+      reset_pass: "Password has been reset."
+  microposts:
+    micropost:
+      delete: "delete"
+      confirm: "You sure?"
+      post: "Posted %{time} ago."
+      max_pic: "should be less than 5MB"
+    create:
+      create_success: "Micropost created!"
+    destroy:
+      delete_success: "Micropost deleted"
+      danger: "Faild"
+
 
