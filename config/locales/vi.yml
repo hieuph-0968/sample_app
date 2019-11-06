@@ -60,6 +60,7 @@ vi:
       vi: "Tiếng Việt"
 
   users:
+    logged: "Làm ơn đăng nhập."
     new:
       sign_up: "Đăng kí"
       content_sign_up: "Đây là trang đăng kí cho người dùng mới."
@@ -69,6 +70,20 @@ vi:
       create_succes: "Chào mừng bạn đến với Ứng dụng mẫu!"
     show:
       id_un_exist: "ID không tồn tại"
+    update:
+      updated: "Thay đổi profile"
+    destroy:
+      deleted: "Xoá User thành công"
+    user:
+      delete: "xóa"
+      sure: Bạn chắc chứ?"
+    edit:
+      edit_user: "Chỉnh sửa user"
+      btn_save: "Lưu thay đổi"
+      change: "thay đổi"
+      update: "Thay đổi profile của bạn"
+    index:
+      all_user: "Tất cả User"
   shared:
     error_messages:
       one: "Biểu mẫu có chứa %{count} lỗi"
