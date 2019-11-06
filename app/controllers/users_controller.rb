@@ -18,8 +18,9 @@ class UsersController < ApplicationController
     @user = User.new user_params
     log_in @user
     if @user.save
-      flash[:success] = t ".create_succes"
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = t ".success"
+      redirect_to root_path
     else
       render :new
     end
@@ -46,6 +47,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def user_params
     params.require(:user).permit :name, :email, :password,
                                  :password_confirmation
@@ -56,27 +58,28 @@ class UsersController < ApplicationController
 
     store_location
     flash[:danger] = t "users.logged"
-    redirect_to login_url
+    redirect_to login_path
   end
 
   def correct_user
     find_user
-    unless current_user? @user
-      flash[:danger] = t "users.not_allow"
-      redirect_to root_path
-    end
+    return if current_user? @user
+
+    flash[:danger] = t "users.not_allow"
+    redirect_to root_path
   end
 
   def admin_user
-    unless current_user.admin?
-      flash[:danger] = t "users.not_admin"
-      redirect_to root_path
-    end
+    return if current_user.admin?
+
+    flash[:danger] = t "users.not_admin"
+    redirect_to root_path
   end
 
   def find_user
     @user = User.find_by id: params[:id]
     return if @user
+
     flash[:danger] = t ".id_un_exist"
     redirect_to root_path
   end
