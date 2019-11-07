@@ -23,8 +23,9 @@ class UsersController < ApplicationController
     @user = User.new user_params
     log_in @user
     if @user.save
-      flash[:success] = t ".create_succes"
-      redirect_to @user
+      @user.send_activation_email
+      flash[:info] = t ".success"
+      redirect_to root_path
     else
       render :new
     end
@@ -47,7 +48,7 @@ class UsersController < ApplicationController
   def destroy
     User.find(params[:id]).destroy
     flash[:success] = t ".deleted"
-    redirect_to users_url
+    redirect_to users_path
   end
 
   private
@@ -61,15 +62,15 @@ class UsersController < ApplicationController
 
     store_location
     flash[:danger] = t "users.logged"
-    redirect_to login_url
+    redirect_to login_path
   end
 
   def correct_user
     @user = User.find(params[:id])
-    redirect_to(root_url) unless current_user?(@user)
+    redirect_to(root_path) unless current_user?(@user)
   end
 
   def admin_user
-    redirect_to(root_url) unless current_user.admin?
+    redirect_to(root_path) unless current_user.admin?
   end
 end
