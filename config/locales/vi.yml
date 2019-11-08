@@ -68,7 +68,7 @@ vi:
       create: "Tạo tài khoản"
     create:
       create_succes: "Chào mừng bạn đến với Ứng dụng mẫu!"
-      succes: "Hãy kiểm tra email của bạn để kích hoạt tài khoản của bạn."
+      success: "Hãy kiểm tra email của bạn để kích hoạt tài khoản của bạn."
     show:
       id_un_exist: "ID không tồn tại"
     update:
@@ -99,17 +99,38 @@ vi:
       sign_up: "Đăng kí ngay!"
       new_user: "Tạo mới người dùng?"
       remember: "Ghi nhớ mật khẩu"
+      forget: "(quên mật khẩu)"
   user_mailer:
     h1: "Ứng dụng mẫu"
     p1: "Xin chào "
     p2: "Chào mừng bạn đến với Ứng dụng mẫu! Nhấp vào liên kết dưới đây để kích hoạt tài khoản của bạn:"
     link: "Kích hoạt"
-  mailers:
+    h1_pass: "Đặt lại mật khẩu"
+    p_pass: "Để đặt lại mật khẩu, hãy nhấp vào liên kết bên dưới:"
+    reset_link: "Đặt lại mật khẩu"
+    p_link: "Liên kết này sẽ hết hạn sau hai giờ nữa."
+    p_request: Nếu bạn không yêu cầu đặt lại mật khẩu, vui lòng bỏ qua email này và mật khẩu của bạn sẽ được giữ nguyên.
     Account_mail: "Kích hoạt tài khoản"
+    reset_password: "Đặt lại mật khẩu"
   account_activations:
     edit:
       danger: "Liên kết kích hoạt không hợp lệ"
       success: "Tài khoản được kích hoạt!"
+  password_resets:
+    expired_pass: "Đặt lại mật khẩu đã hết hạn."
+    edit:
+      title: "Đặt lại mật khẩu"
+      update_pass: "Cập nhật mật khẩu"
+    new:
+      title: "Quên mật khẩu"
+      submit: "Gửi"
+    create:
+      confirm_pass: "Email được gửi với hướng dẫn đặt lại mật khẩu"
+      email_not_found: "Không tìm thấy địa chỉ email"
+    update:
+      empty: "không thể để trống"
+      reset_pass: "Mật khẩu đã được đặt lại."
+
 
 
 
