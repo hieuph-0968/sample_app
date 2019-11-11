@@ -63,6 +63,10 @@ en:
       vi: "Vietnamese"
 
   users:
+    not_allow: "not allow access"
+    not_admin: "You are not the admin"
+    permission: "User not permission"
+    logged: "Please log in."
     new:
       sign_up: "Sign Up"
       content_sign_up: "This will be a signup page for new users."
@@ -72,6 +76,21 @@ en:
       create_succes: "Welcome to the Sample App!"
     show:
       id_un_exist: "ID is not exist"
+    update:
+      updated: "Profile updated"
+    destroy:
+      deleted: "User deleted"
+    user:
+      delete: "delete"
+      sure: You sure?"
+    edit:
+      edit_user: "Edit user"
+      btn_save: "Save changes"
+      change: "change"
+      update: "Update your profile"
+    index:
+      all_user: "All users"
+
   shared:
     error_messages:
       one: "The form contains %{count} error"
