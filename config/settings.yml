@@ -2,3 +2,5 @@ max_name: 50
 max_email: 255
 min_password: 6
 value_remember: "1"
+max_micropost: 200
+size_picture: 5

@@ -1,18 +1,15 @@
 class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
-  before_action :correct_user,   only: [:edit, :update]
-  before_action :admin_user,     only: :destroy
+  before_action :correct_user, only: [:edit, :update]
+  before_action :check_admin, only: :destroy
+  before_action :load_user, only: [:edit, :update, :destroy, :show]
 
   def index
-    @users = User.paginate(page: params[:page])
+    @users = User.paginate page: params[:page]
   end
 
   def show
-    @user = User.find_by id: params[:id]
-    return if @user
-
-    flash[:danger] = t ".id_un_exist"
-    redirect_to root_path
+    @microposts = @user.microposts.paginate page: params[:page]
   end
 
   def new
@@ -31,13 +28,10 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-    @user = User.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update(user_params)
+    if @user.update user_params
       flash[:success] = t ".updated"
       redirect_back_or @user
     else
@@ -46,12 +40,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
+    User.find params[:id] .destroy
     flash[:success] = t ".deleted"
     redirect_to users_path
   end
 
   private
+
   def user_params
     params.require(:user).permit :name, :email, :password,
                                  :password_confirmation
@@ -65,12 +60,26 @@ class UsersController < ApplicationController
     redirect_to login_path
   end
 
-  def correct_user
-    @user = User.find(params[:id])
-    redirect_to(root_path) unless current_user?(@user)
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+
+    flash[:danger] = t ".id_un_exist"
+    redirect_to root_path
   end
 
-  def admin_user
-    redirect_to(root_path) unless current_user.admin?
+  def correct_user
+    find_user
+    return if current_user? @user
+
+    flash[:danger] = t "users.not_allow"
+    redirect_to root_path
+  end
+
+  def check_admin
+    return if current_user.admin?
+
+    flash[:danger] = t "users.not_admin"
+    redirect_to root_path
   end
 end
