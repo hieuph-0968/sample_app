@@ -55,12 +55,16 @@ group :development, :test do
   gem "rubocop", "~> 0.74.0", require: false
   gem "rubocop-rails", "~> 2.3.2", require: false
 end
+
 gem "bcrypt", "3.1.12"
 gem "bootstrap-sass", "3.3.7"
 gem "bootstrap-will_paginate"
+gem "carrierwave", "1.2.2"
 gem "config"
 gem "faker"
 gem "figaro"
+gem "mini_magick", "4.7.0"
 gem "rails-controller-testing"
 gem "rails-i18n"
+gem "rubocop-faker"
 gem "will_paginate"

@@ -17,6 +17,7 @@ vi:
       application: "ứng dụng mẫu."
       rubyonrails_href: "Ruby on Rails Tutorial"
       signup: "Đăng ký ngay!"
+      micropost_feed: "Phản hồi của Micropost"
 
     help:
       help: "Trợ giúp"
@@ -73,6 +74,7 @@ vi:
       success: "Hãy kiểm tra email của bạn để kích hoạt tài khoản của bạn."
     show:
       id_un_exist: "ID không tồn tại"
+      micropost: "Microposts "
     update:
       updated: "Thay đổi profile"
     destroy:
@@ -89,8 +91,13 @@ vi:
       all_user: "Tất cả User"
   shared:
     error_messages:
-      one: "Biểu mẫu có chứa %{count} lỗi"
-      other: "Biểu mẫu có chứa %{count} lỗi"
+      count:
+        one: "Biểu mẫu có chứa %{count} lỗi"
+        other: "Biểu mẫu có chứa %{count} lỗi"
+    micropost_form:
+      placeholder: "Compose new micropost..."
+      post: "Post"
+      micropost_form_notify: "Maximum file size is 5MB. Please choose a smaller file."
   sessions:
     load_user: "Tài khoản không tồn tại!"
     create:
@@ -134,6 +141,17 @@ vi:
     update:
       empty: "không thể để trống"
       reset_pass: "Mật khẩu đã được đặt lại."
+  microposts:
+    micropost:
+      delete: "xóa"
+      confirm: "Bạn chắc chắn?"
+      post: "Đã đăng %{time} trước."
+      max_pic: "nên nhỏ hơn 5MB"
+    create:
+      create_success: "Đã tạo micropost"
+    destroy:
+      delete_success: "Đã xóa micropost"
+      danger: "Thất bại"
 
 
 

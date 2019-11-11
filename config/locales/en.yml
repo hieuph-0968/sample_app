@@ -18,6 +18,7 @@ en:
       application: "sample application."
       rubyonrails_href: "Ruby on Rails Tutorial"
       signup: "Sign up now!"
+      micropost_feed: "Micropost Feed"
 
     help:
       help: "Help"
@@ -77,6 +78,7 @@ en:
       success: "Please check your email to activate your account."
     show:
       id_un_exist: "ID is not exist"
+      micropost: "Microposts "
     update:
       updated: "Profile updated"
     destroy:
@@ -94,8 +96,13 @@ en:
 
   shared:
     error_messages:
-      one: "The form contains %{count} error"
-      other: "The form contains %{count} errors"
+      count:
+        one: "The form contains %{count} error"
+        other: "The form contains %{count} errors"
+    micropost_form:
+      placeholder: "Compose new micropost..."
+      post: "Post"
+      micropost_form_notify: "Maximum file size is 5MB. Please choose a smaller file."
   sessions:
     load_user: "User no exist!"
     create:
@@ -131,7 +138,6 @@ en:
       title: "Reset password"
       update_pass: "Update password"
     new:
-      title: "Forgot password"
       submit: "Submit"
     create:
       confirm_pass: "Email sent with password reset instructions"
@@ -139,4 +145,16 @@ en:
     update:
       empty: "can't be empty"
       reset_pass: "Password has been reset."
+  microposts:
+    micropost:
+      delete: "delete"
+      confirm: "You sure?"
+      post: "Posted %{time} ago."
+      max_pic: "should be less than 5MB"
+    create:
+      create_success: "Micropost created!"
+    destroy:
+      delete_success: "Micropost deleted"
+      danger: "Faild"
+
 
