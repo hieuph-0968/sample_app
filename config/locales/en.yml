@@ -74,6 +74,7 @@ en:
       create: "Create my account"
     create:
       create_succes: "Welcome to the Sample App!"
+      success: "Please check your email to activate your account."
     show:
       id_un_exist: "ID is not exist"
     update:
@@ -96,11 +97,23 @@ en:
       one: "The form contains %{count} error"
       other: "The form contains %{count} errors"
   sessions:
+    load_user: "User no exist!"
     create:
+      activate: "Account not activated.Check your email for the activation link. "
       faild: "Invalid email/password combination"
     new:
       login: "Log in"
       sign_up: "Sign up now!"
       new_user: "New user?"
       remember: "Remember me on this computer"
+  user_mailer:
+    h1: "Sample App"
+    p1: "Hi "
+    p2: "Welcome to the Sample App! Click on the link below to activate your account:"
+    link: "Activate"
+    Account_mail: "Account activation"
+  account_activations:
+    edit:
+      danger: "Invalid activation link"
+      success: "Account activated!"
 
