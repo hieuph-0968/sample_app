@@ -90,7 +90,12 @@ en:
       update: "Update your profile"
     index:
       all_user: "All users"
-
+    follow:
+      fo: "Follow"
+    show_follow:
+      view: "view my profile"
+    unfollow:
+      un: "Unfollow"
   shared:
     error_messages:
       count:
@@ -100,6 +105,8 @@ en:
       placeholder: "Compose new micropost..."
       post: "Post"
       micropost_form_notify: "Maximum file size is 5MB. Please choose a smaller file."
+    user_info:
+      view: "view my profile"
   sessions:
     load_user: "User no exist!"
     create:
@@ -132,6 +139,7 @@ en:
     edit:
       title: "Reset password"
       update_pass: "Update password"
+      email_un_exist: "Email not exist"
     new:
       submit: "Submit"
     create:

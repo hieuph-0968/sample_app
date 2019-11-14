@@ -1,13 +1,10 @@
 class PasswordResetsController < ApplicationController
-  before_action :get_user,   only: [:edit, :update]
-  before_action :valid_user, only: [:edit, :update]
-  before_action :check_expiration, only: [:edit, :update]    # Case (1)
+  before_action :get_user, :valid_user, :check_expiration, only: %i(edit update)
 
-  def new
-  end
+  def new; end
 
   def create
-    @user = User.find_by(email: params[:password_reset][:email].downcase)
+    @user = User.find_by email: params[:password_reset][:email].downcase
     if @user
       @user.create_reset_digest
       @user.send_password_reset_email
@@ -19,14 +16,13 @@ class PasswordResetsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
-    if params[:user][:password].empty?                  # Case (3)
-      @user.errors.add(:password, t(".empty"))
+    if params[:user][:password].blank?
+      @user.errors.add :password, t(".empty")
       render :edit
-    elsif @user.update_attributes(user_params)          # Case (4)
+    elsif @user.update user_params
       log_in @user
       flash[:success] = t ".reset_pass"
       redirect_to @user
@@ -43,19 +39,23 @@ class PasswordResetsController < ApplicationController
 
   def get_user
     @user = User.find_by email: params[:email]
+    return if @user
+
+    flash[:danger] = t ".email_un_exist"
+    redirect_to root_path
   end
 
-  # Confirms a valid user.
   def valid_user
-    unless (@user && @user.activated? && @user.authenticated?(:reset, params[:id]))
-      redirect_to root_path
-    end
+    return if @user.activated? && @user.authenticated?(:reset, params[:id])
+
+    flash[:danger] = t ".user_un_active"
+    redirect_to root_path
   end
 
   def check_expiration
-    if @user.password_reset_expired?
-      flash[:danger] = t ".expired_pass"
-      redirect_to new_password_reset_path
-    end
+    return unless @user.password_reset_expired?
+
+    flash[:danger] = t ".expired_pass"
+    redirect_to new_password_reset_path
   end
 end

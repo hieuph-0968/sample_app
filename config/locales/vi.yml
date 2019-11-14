@@ -87,15 +87,23 @@ vi:
       update: "Thay đổi profile của bạn"
     index:
       all_user: "Tất cả User"
+    follow:
+      fo: "Theo dõi"
+    show_follow:
+      view: "xem hồ sơ của tôi"
+    unfollow:
+      un: "Hủy theo dõi"
   shared:
     error_messages:
       count:
         one: "Biểu mẫu có chứa %{count} lỗi"
         other: "Biểu mẫu có chứa %{count} lỗi"
     micropost_form:
-      placeholder: "Compose new micropost..."
+      placeholder: "Soạn micropost mới ..."
       post: "Post"
-      micropost_form_notify: "Maximum file size is 5MB. Please choose a smaller file."
+      micropost_form_notify: "Kích thước tệp tối đa là 5MB. Vui lòng chọn một tập tin nhỏ hơn."
+    user_info:
+      view: "xem hồ sơ của tôi"
   sessions:
     load_user: "Tài khoản không tồn tại!"
     create:
@@ -128,6 +136,8 @@ vi:
     edit:
       title: "Đặt lại mật khẩu"
       update_pass: "Cập nhật mật khẩu"
+      email_un_exist: "Email không tồn tại"
+
     new:
       title: "Quên mật khẩu"
       submit: "Gửi"
