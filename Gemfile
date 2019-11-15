@@ -4,14 +4,13 @@ git_source(:github){|repo| "https://github.com/#{repo}.git"}
 ruby "2.6.1"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
-gem "rails", "~> 6.0.0"
+gem "rails", "~> 6.0.1"
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
 # Use Puma as the app server
-gem "puma", "~> 3.11"
+gem "puma", "~> 4.1"
 # Use SCSS for stylesheets
 gem "jquery-rails"
-gem "sass-rails", "~> 5"
+gem "sass-rails", ">= 6"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem "webpacker", "~> 4.0"
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -41,6 +40,14 @@ group :development do
   gem "spring-watcher-listen", "~> 2.0.0"
 end
 
+
+group :development, :test do
+  gem "sqlite3", "~> 1.4.1"
+end
+
+gem "pg"
+gem "rails_12factor"
+
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem "capybara", ">= 2.15"
@@ -60,7 +67,7 @@ gem "bootstrap-sass", "3.3.7"
 gem "bootstrap-will_paginate"
 gem "config"
 gem "faker"
+gem "figaro"
 gem "rails-controller-testing"
 gem "rails-i18n"
 gem "will_paginate"
-gem "figaro"

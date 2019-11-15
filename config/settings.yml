@@ -3,3 +3,4 @@ max_email: 255
 min_password: 6
 value_remember: "1"
 max_micropost: 140
+two_hour: 2
